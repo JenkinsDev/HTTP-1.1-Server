@@ -4,17 +4,18 @@
 // Includes
 ////////////////////////////////////////////////////////////
 #include <stdio.h>
+#include <stdlib.h>
 
 // Struct/Union Signatures
 ////////////////////////////////////////////////////////////
-typedef struct {
+struct HTTPHeader {
   char *key;
   char *value;
-} HttpHeader;
+};
 
 // Function Signatures
 ////////////////////////////////////////////////////////////
-HttpHeader header_factory(char *key, char *value);
-size_t header_size(HttpHeader *array);
+struct HTTPHeader header_factory(char *key, char *value);
+struct HTTPHeader header_from_str(char *header_str);
 
 #endif

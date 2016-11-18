@@ -1,22 +1,15 @@
 #include "main.h"
 
 int main(int argc, char *argv[]) {
-  Request req;
-  HttpHeader header = header_factory("Authorization", "KlsdAdfeNa");
+  struct HTTPHeader headers[] = {header_factory("Authorization", "KlsdAdfeNa")};
+  size_t header_arr_size = 1;
 
-  req.status = 200;
-  req.body = "test";
-  req.headers[0] = header;
+  struct Request *req = request_factory("test", headers, header_arr_size);
 
-  printf("%d", req.status);
-  printf("\n");
-  printf("%s", req.body);
-  printf("\n");
+  printf("%s\n", req->body);
 
-  for (size_t i = 0; i<=header_size(req.headers); i++) {
-    HttpHeader header = req.headers[i];
-
-    printf("%s: %s", header.key, header.value);
+  for (size_t i=0; i<header_arr_size; i++) {
+    printf("%s: %s\n", (&req->headers[i])->key, (&req->headers[i])->value);
   }
 
   return 0;

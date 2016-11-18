@@ -1,14 +1,10 @@
 #include "httpheader.h"
 
-HttpHeader header_factory(char *key, char *value) {
-  HttpHeader header;
-
-  header.key = key;
-  header.value = value;
-
-  return header;
+struct HTTPHeader header_factory(char *key, char *value) {
+  // More to be done here...
+  return (struct HTTPHeader) {.key = key, .value = value};
 }
 
-size_t header_size(HttpHeader *array) {
-  return sizeof(array) / sizeof(array[0]);
+struct HTTPHeader header_from_str(char *header_str) {
+  
 }
