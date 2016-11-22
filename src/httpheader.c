@@ -19,6 +19,8 @@ header_from_str(char *header_str) {
   char *key = strtok(header_str, HEADER_KEY_VAL_SEP);
   char *value = strtok(NULL, HEADER_KEY_VAL_SEP);
 
+  if (value == NULL) return NULL;
+
   // Shift our string memory up one character if the strings starts with a
   // space-character.
   if (isspace(value[0])) {

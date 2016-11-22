@@ -1,0 +1,13 @@
+#ifndef __STRINGUTIL_H
+#define __STRINGUTIL_H
+
+// Includes
+////////////////////////////////////////////////////////////
+#include <string.h>
+#include <stdlib.h>
+
+// Function Signatures
+////////////////////////////////////////////////////////////
+char *strdup(const char *s);
+
+#endif
