@@ -5,6 +5,7 @@
 ////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include "request.h"
+#include "status.h"
 #include "httpheader.h"
 #include "stringutil.h"
 
